@@ -55,10 +55,25 @@ const prompt = ai.definePrompt({
     }),
   },
   prompt: `You are an expert review generator for businesses. Based on the company description and keywords provided, generate {{numReviews}} review suggestions that customers might write.
+Guidelines:
 
+Write reviews in simple, friendly tone
+Each review should be unique and reflect different aspects of the business
+Ensure all reviews are positive, engaging, and relevant to the keywords
+Write each review in ONE language only - either Hindi, Gujarati, or English
+DO NOT mix languages within a single review
+Distribute the reviews across the three languages
+No language tags needed before reviews
+
+Language Distribution:
+
+Approximately 1/3 reviews in Hindi
+Approximately 1/3 reviews in Gujarati
+Approximately 1/3 reviews in English
+
+Company Information:
 Company Description: {{{companyDescription}}}
 Keywords: {{#each keywords}}{{{this}}}{{#unless @last}}, {{/unless}}{{/each}}
-
 Reviews:`,
 });
 
